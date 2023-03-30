@@ -9,24 +9,30 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class BouteilleServicedd implements BouteilleService {
+public class BouteilleServiceImpl implements BouteilleService{
+
     @Autowired
     BouteilleRepository bouteilleRepository;
-
     @Override
     public List<Bouteille> listerToutesLesBouteille() {
+
         return bouteilleRepository.findAll();
     }
+
     @Override
     public Optional<Bouteille> trouverUneBouteilleParSonId(int id) {
+
         return bouteilleRepository.findById(id);
     }
+
     @Override
     public void sauvegarderUneBouteille(Bouteille bouteille) {
         bouteilleRepository.save(bouteille);
+
     }
+
     @Override
-    public void effacerUneBouteille(Bouteille bouteille){
+    public void effacerUneBouteille(Bouteille bouteille) {
         bouteilleRepository.delete(bouteille);
     }
 }

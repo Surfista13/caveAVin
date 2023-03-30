@@ -25,6 +25,7 @@ public class Bouteille {
     @Min(1)
     private int quantite;
     @ManyToOne
+    @NotNull
     private Couleur couleur;
     @ManyToOne
     private Region region;

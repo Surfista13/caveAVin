@@ -1,11 +1,8 @@
 package fr.eni.caveavin;
 
-import fr.eni.caveavin.model.Bouteille;
-import fr.eni.caveavin.model.Couleur;
-import fr.eni.caveavin.model.Region;
-import fr.eni.caveavin.service.BouteilleServicedd;
-import fr.eni.caveavin.service.CouleurService;
-import fr.eni.caveavin.service.RegionService;
+import fr.eni.caveavin.service.BouteilleService;
+import fr.eni.caveavin.service.CouleurServiceImpl;
+import fr.eni.caveavin.service.RegionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,11 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CaveAVinApplication implements CommandLineRunner {
     @Autowired
-    CouleurService couleurService;
+    CouleurServiceImpl couleurService;
     @Autowired
-    RegionService regionService;
+    RegionServiceImpl regionService;
     @Autowired
-    BouteilleServicedd bouteilleService;
+    BouteilleService bouteilleService;
 
     public static void main(String[] args) {
         SpringApplication.run(CaveAVinApplication.class, args);

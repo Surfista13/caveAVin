@@ -1,27 +1,16 @@
 package fr.eni.caveavin.service;
 
 import fr.eni.caveavin.model.Region;
-import fr.eni.caveavin.repository.RegionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-@Service
-public class RegionService {
-    @Autowired
-    RegionRepository regionRepository;
+public interface RegionService {
+    List<Region> listerToutesLesRegions();
 
-    public List<Region> listerToutesLesRegions() {
-        return regionRepository.findAll();
-}
-    public Region trouverUneRegionParSonId(int id) {
-        return regionRepository.findById(id).get();
-    }
-    public void ajouterUneRegion(Region region) {
-        regionRepository.save(region);
-    }
-    public void effacerUneRegion(Region region){
-        regionRepository.delete(region);
-    }
+    Optional<Region> trouverUneRegionParSonId(int id);
+
+    void ajouterUneRegion(Region region);
+
+    void effacerUneRegion(Region region);
 }
