@@ -20,7 +20,9 @@ public class Bouteille {
     private int id;
     @Size(min = 5, max = 50)
     private String nom;
+    @NotNull
     private boolean petillant;
+    @NotNull
     private String millesime;
     @Min(1)
     private int quantite;
@@ -28,6 +30,7 @@ public class Bouteille {
     @NotNull
     private Couleur couleur;
     @ManyToOne
+    @NotNull
     private Region region;
 
     public Bouteille(String nom, boolean petillant, String millesime, int quantite, Couleur couleur, Region region) {

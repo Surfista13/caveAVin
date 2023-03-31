@@ -31,7 +31,7 @@ public class BouteilleController {
     }
 
 
-    @PostMapping
+    @PostMapping("/bouteilles/ajouter")
     public ResponseEntity<Bouteille> ajouterBouteille(@RequestBody Bouteille bouteille) {
         ResponseEntity<Bouteille> response;
         try {
